@@ -8,9 +8,10 @@
 
   <script>
     const pdfContainer = document.getElementById('pdfContainer');
+    const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
     const targetUrl = 'https://www.tutorialspoint.com/css/css_tutorial.pdf';
 
-    fetch(targetUrl)
+    fetch(corsAnywhereUrl + targetUrl)
       .then(response => response.blob())
       .then(blob => {
         const fileURL = URL.createObjectURL(blob);
