@@ -8,10 +8,10 @@
 
   <script>
     const pdfContainer = document.getElementById('pdfContainer');
-    const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
+    const thingProxyUrl = 'https://thingproxy.freeboard.io/fetch/';
     const targetUrl = 'https://www.tutorialspoint.com/css/css_tutorial.pdf';
 
-    fetch(corsAnywhereUrl + targetUrl)
+    fetch(thingProxyUrl + targetUrl)
       .then(response => response.blob())
       .then(blob => {
         const fileURL = URL.createObjectURL(blob);
