@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exemplo de Renderização de PDF via API com CORS</title>
+</head>
+<body style="margin: 0; padding: 0; overflow: hidden;">
+  <div id="pdfContainer"></div>
+
+  <script>
+    const pdfContainer = document.getElementById('pdfContainer');
+    const targetUrl = 'https://www.tutorialspoint.com/css/css_tutorial.pdf';
+
+    fetch(targetUrl)
+      .then(response => response.blob())
+      .then(blob => {
+        const fileURL = URL.createObjectURL(blob);
+        const emb = document.createElement('embed');
+        emb.setAttribute('src', fileURL);
+        emb.setAttribute('type', 'application/pdf');
+        emb.setAttribute('width', '100%');
+        emb.setAttribute('height', '100%');
+        pdfContainer.appendChild(emb);
+      })
+      .catch(error => {
+        console.error('Erro ao buscar o PDF:', error);
+      });
+  </script>
+</body>
+</html>
