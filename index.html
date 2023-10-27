@@ -9,7 +9,7 @@
   <script>
     const pdfContainer = document.getElementById('pdfContainer');
     const thingProxyUrl = 'https://thingproxy.freeboard.io/fetch/';
-    const targetUrl = 'http://www.tutorialspoint.com/css/css_tutorial.pdf';
+    const targetUrl = 'https://www.tutorialspoint.com/css/css_tutorial.pdf';
 
     fetch(thingProxyUrl + targetUrl)
       .then(response => response.blob())
